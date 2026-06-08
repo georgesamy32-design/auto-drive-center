@@ -99,6 +99,9 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .brand__text{display:flex;flex-direction:column;line-height:1.1}
 .brand__text strong{font-family:var(--ff-head);font-size:17px;letter-spacing:.3px}
 .brand__text small{color:var(--grey);font-size:12px}
+.brand__logo{height:54px;width:auto;border-radius:10px;display:block}
+.brand--footer .brand__logo{height:68px}
+@media (max-width:760px){.brand__logo{height:46px}}
 .nav{display:flex;align-items:center;gap:30px}
 .nav__link{font-size:15px;font-weight:500;color:var(--grey);transition:color .2s;position:relative}
 .nav__link:hover{color:#fff}
