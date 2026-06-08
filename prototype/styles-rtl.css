@@ -1,13 +1,19 @@
 /* =========================================================
-   Auto Drive Center — RTL overrides (load AFTER styles.css)
+   Auto Drive Service Center — RTL overrides (load AFTER styles.css)
+
+   Most direction flips are handled natively by the CSS Logical
+   Properties in styles.css (padding-inline, inset-inline-*,
+   border-inline-*, text-align:start, etc). Only things that have
+   no logical equivalent — gradient angles/positions and
+   transform-origin — need explicit overrides here.
    ========================================================= */
 :root{
   --ff-head:"Cairo",system-ui,sans-serif;
   --ff-body:"Tajawal","Cairo",system-ui,sans-serif;
 }
-body{direction:rtl;text-align:right}
+body{direction:rtl}
 
-/* Hero overlay: darken the right side instead of the left */
+/* Hero overlay: darken the right side instead of the left (gradients aren't logical-aware) */
 .hero__overlay{background:linear-gradient(270deg,rgba(0,0,0,.55),transparent 70%)}
 .hero__bg{
   background-image:
@@ -18,35 +24,6 @@ body{direction:rtl;text-align:right}
   background-position:center;
   background-repeat:no-repeat;
 }
-.hero__sub{margin-left:auto}
 
-/* Nav underline grows from the right */
-.nav__link::after{left:auto;right:0}
-
-/* Stat separators flip side */
-.stat{border-right:0;border-left:1px solid rgba(255,255,255,.2)}
-.stat:last-child{border-left:0}
-@media (max-width:760px){
-  .stat:nth-child(2){border-left:0}
-}
-
-/* Service card top accent grows from the right */
+/* Service card top-accent should grow from the right (transform-origin has no logical form) */
 .card::before{transform-origin:right}
-
-/* Tick list bullets move to the right */
-.ticklist li{padding-left:0;padding-right:30px}
-.ticklist li::before{left:auto;right:0}
-
-/* Engineer floating tag flips to the left edge */
-.engineer__tag{right:auto;left:-14px}
-
-/* Floating buttons to the bottom-left */
-.float-btn{right:auto;left:22px}
-
-/* Offer "FREE" tag flips to the top-left */
-.offer__tag{right:auto;left:18px}
-
-/* Mobile nav links keep right alignment */
-@media (max-width:760px){
-  .nav__cta{text-align:center}
-}
