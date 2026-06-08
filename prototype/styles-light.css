@@ -1,0 +1,213 @@
+/* =========================================================
+   Auto Drive Center — Light Theme Override
+   Load AFTER styles.css to override dark variables
+   ========================================================= */
+
+:root {
+  --black:     #f5f5f9;      /* page background  */
+  --charcoal:  #eaeaf3;      /* alt section bg   */
+  --charcoal-2:#e3e3ee;      /* booking section  */
+  --surface:   #ffffff;      /* cards / form     */
+  --surface-2: #f0f0f8;      /* secondary surface */
+  --line:      #d4d4e4;      /* borders          */
+  --white:     #0d0d18;      /* primary text     */
+  --grey:      #4e4e62;      /* muted text       */
+  --grey-dim:  #8888a2;      /* very muted text  */
+  --shadow:    0 18px 50px -20px rgba(0,0,0,.10);
+  --shadow-red: 0 14px 40px -12px rgba(225,29,42,.25);
+}
+
+/* ---- Body ---- */
+body {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ---- Topbar ---- */
+.topbar {
+  background: #e6e6f2;
+  border-bottom-color: var(--line);
+  color: var(--grey);
+}
+.topbar__links a:hover { color: var(--white); }
+
+/* ---- Header ---- */
+.header {
+  background: rgba(245,245,249,.88);
+}
+.header.scrolled {
+  background: rgba(245,245,249,.97);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 28px -16px rgba(0,0,0,.14);
+}
+
+/* Nav */
+.nav__link       { color: var(--grey); }
+.nav__link:hover { color: var(--white); }
+
+.lang-btn {
+  color: var(--white);
+  border-color: var(--line);
+}
+.lang-btn:hover {
+  border-color: var(--red);
+  background: rgba(225,29,42,.08);
+}
+
+/* Mobile nav panel */
+@media (max-width:760px) {
+  .nav {
+    background: var(--charcoal);
+    border-bottom-color: var(--line);
+  }
+  .nav__link { border-bottom-color: var(--line); }
+  /* hamburger lines */
+  .nav-toggle span { background: var(--white); }
+}
+
+/* ---- Hero ---- */
+.hero__bg {
+  background:
+    radial-gradient(1200px 600px at 75% 20%, rgba(225,29,42,.10), transparent 60%),
+    linear-gradient(135deg, #f5f5f9 0%, #eaeaf4 55%, #f5f5f9 100%);
+}
+.hero__bg::before {
+  background-image:
+    linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px);
+  -webkit-mask-image: radial-gradient(900px 500px at 70% 30%, #000, transparent 75%);
+          mask-image: radial-gradient(900px 500px at 70% 30%, #000, transparent 75%);
+}
+.hero__overlay {
+  background: linear-gradient(90deg, rgba(245,245,249,.50), transparent 70%);
+}
+
+/* Hero text that was hardcoded white */
+.hero__sub strong { color: var(--white); }
+
+/* Scroll indicator */
+.hero__scroll {
+  border-color: rgba(13,13,24,.22);
+}
+.hero__scroll span { background: var(--white); }
+
+/* Ghost button — needs dark text on light bg */
+.btn--ghost {
+  color: var(--white);
+  border-color: rgba(13,13,24,.28);
+}
+.btn--ghost:hover {
+  border-color: var(--white);
+  background: rgba(13,13,24,.07);
+}
+
+/* ---- Stats (stays red — only minor tweak) ---- */
+/* intentionally left as-is; red bg still pops */
+
+/* ---- Feature cards ---- */
+.feature {
+  background: var(--surface);
+  border-color: var(--line);
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+.feature:hover {
+  border-color: var(--red);
+  box-shadow: 0 12px 32px rgba(0,0,0,.10);
+}
+.feature__icon { background: var(--charcoal); }
+
+/* ---- Service cards ---- */
+.card {
+  background: var(--surface);
+  border-color: var(--line);
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+.card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,.10);
+  border-color: var(--charcoal-2);
+}
+.card p { color: var(--grey); }
+
+/* ---- Engineer section ---- */
+.engineer__photo {
+  background:
+    radial-gradient(400px 260px at 50% 20%, rgba(225,29,42,.14), transparent 60%),
+    linear-gradient(160deg, #e8e8f4, #f0f0fa);
+  border-color: var(--line);
+}
+.engineer__content p { color: var(--grey); }
+.ticklist li { color: var(--white); }
+
+/* ---- Steps ---- */
+.step__n { color: var(--charcoal-2); }
+.step p   { color: var(--grey); }
+
+/* ---- Booking ---- */
+.booking {
+  background: linear-gradient(180deg, var(--black), var(--charcoal-2));
+}
+.booking__intro p { color: var(--grey); }
+.booking__phone   { color: var(--white); }
+
+.form {
+  background: var(--surface);
+  border-color: var(--line);
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+}
+.field label { color: var(--grey); }
+.field input,
+.field select,
+.field textarea {
+  background: var(--charcoal);
+  border-color: var(--line);
+  color: var(--white);
+}
+.field select option { background: var(--surface); color: var(--white); }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--grey-dim); }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(225,29,42,.14);
+}
+
+/* ---- Locations ---- */
+.location {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.location:hover { border-color: var(--red); }
+
+.location-single {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.location-single:hover { border-color: var(--red); }
+
+.location__addr { color: var(--grey); }
+.location__map {
+  background: var(--charcoal);
+  border-color: var(--line);
+  color: var(--grey-dim);
+}
+
+/* ---- CTA Banner — stays red ---- */
+
+/* ---- Footer ---- */
+.footer {
+  background: #e0e0ed;
+  border-top-color: var(--line);
+}
+.footer__col h4 { color: var(--white); }
+.footer__col a,
+.footer__col p   { color: var(--grey); }
+.footer__col a:hover { color: var(--white); }
+.footer__about   { color: var(--grey); }
+.footer__bar {
+  border-top-color: var(--line);
+  color: var(--grey-dim);
+}
+
+/* ---- Section text ---- */
+.section__lead { color: var(--grey); }

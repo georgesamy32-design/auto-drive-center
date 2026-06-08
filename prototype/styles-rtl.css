@@ -36,8 +36,11 @@ body{direction:rtl;text-align:right}
 /* Engineer floating tag flips to the left edge */
 .engineer__tag{right:auto;left:-14px}
 
-/* Floating call button to the bottom-left */
-.float-call{right:auto;left:22px}
+/* Floating buttons to the bottom-left */
+.float-btn{right:auto;left:22px}
+
+/* Offer "FREE" tag flips to the top-left */
+.offer__tag{right:auto;left:18px}
 
 /* Mobile nav links keep right alignment */
 @media (max-width:760px){

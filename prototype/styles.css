@@ -59,6 +59,8 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-3px)}
 .btn--light{background:#fff;color:var(--black)}
 .btn--light:hover{transform:translateY(-3px);box-shadow:0 18px 40px -14px rgba(0,0,0,.6)}
+.btn--wa{background:#25d366;color:#0b3d24}
+.btn--wa:hover{background:#1ebe5b;transform:translateY(-3px);box-shadow:0 16px 40px -12px rgba(37,211,102,.4)}
 
 /* ---------- Eyebrow / Section heads ---------- */
 .eyebrow{
@@ -139,6 +141,12 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .hero__actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
 .hero__badges{list-style:none;display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:40px;color:var(--grey);font-size:14px}
 .hero__badges li{display:flex;align-items:center}
+.specs{list-style:none;display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:30px}
+.specs li{
+  display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:#e6e6ea;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  padding:8px 14px;border-radius:999px;backdrop-filter:blur(4px);
+}
 .hero__scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;width:26px;height:42px;border:2px solid rgba(255,255,255,.35);border-radius:14px;display:grid;justify-items:center;padding-top:8px}
 .hero__scroll span{width:4px;height:8px;background:#fff;border-radius:2px;animation:scroll 1.6s infinite}
 @keyframes scroll{0%{opacity:0;transform:translateY(-4px)}50%{opacity:1}100%{opacity:0;transform:translateY(10px)}}
@@ -199,6 +207,49 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .ticklist li{padding-left:30px;position:relative;margin-bottom:12px;color:#e6e6ea}
 .ticklist li::before{content:"✓";position:absolute;left:0;top:0;color:#fff;background:var(--red);width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px}
 
+/* ---------- About ---------- */
+.about__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.about__photo{
+  aspect-ratio:4/3.4;border-radius:18px;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:radial-gradient(420px 280px at 50% 25%,rgba(225,29,42,.22),transparent 60%),linear-gradient(160deg,#1d1d24,#101015);
+}
+.about__photo::after{content:"🚗";position:absolute;inset:0;display:grid;place-items:center;font-size:110px;opacity:.45}
+.about__content p{color:var(--grey);margin:18px 0}
+
+/* ---------- Offers ---------- */
+.offer{
+  position:relative;background:linear-gradient(160deg,#211016,var(--surface));
+  border:1px solid #3a2030;border-radius:var(--radius);padding:36px 30px;overflow:hidden;
+  transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;
+}
+.offer:hover{transform:translateY(-6px);border-color:var(--red);box-shadow:var(--shadow)}
+.offer__tag{position:absolute;top:18px;right:18px;background:var(--red);color:#fff;font-family:var(--ff-head);font-weight:800;font-size:12px;letter-spacing:1px;padding:5px 12px;border-radius:999px}
+.offer__icon{font-size:40px;margin-bottom:14px}
+.offer h3{font-size:24px;margin-bottom:10px}
+.offer p{color:var(--grey);margin-bottom:22px}
+
+/* ---------- Insurance / Fleet band ---------- */
+.band__item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:transform .3s var(--ease),border-color .3s}
+.band__item:hover{transform:translateY(-5px);border-color:var(--red)}
+.band__icon{font-size:30px;width:58px;height:58px;border-radius:13px;display:grid;place-items:center;background:var(--charcoal);margin-bottom:16px}
+.band__item h3{font-size:18px;margin-bottom:9px}
+.band__item p{color:var(--grey);font-size:15px}
+.band__cta{text-align:center;margin-top:44px}
+
+/* ---------- Hours ---------- */
+.hours{list-style:none;margin:20px 0;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:11px 0;border-bottom:1px solid var(--line)}
+.hours span{color:var(--grey)}
+.hours strong{font-family:var(--ff-head);font-weight:600;color:#fff}
+.hours__closed{color:var(--red)!important}
+
+/* ---------- Social ---------- */
+.social{display:flex;gap:12px;margin-top:18px}
+.social a{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);transition:transform .25s var(--ease),background .25s,border-color .25s}
+.social a:hover{transform:translateY(-3px);border-color:var(--red);background:rgba(225,29,42,.12)}
+.social svg{width:20px;height:20px;fill:#cfcfd6}
+.social a:hover svg{fill:#fff}
+
 /* ---------- Steps ---------- */
 .steps .step{background:transparent;text-align:left;padding:8px 4px;position:relative}
 .step__n{font-family:var(--ff-head);font-weight:800;font-size:40px;color:var(--surface-2);display:block;margin-bottom:6px;transition:color .3s}
@@ -213,6 +264,8 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .booking__call{display:flex;flex-direction:column;gap:12px}
 .booking__phone{font-family:var(--ff-head);font-weight:700;font-size:22px;color:#fff;transition:color .2s}
 .booking__phone:hover{color:var(--red)}
+.booking__phone--wa{color:#25d366}
+.booking__phone--wa:hover{color:#1ebe5b}
 .form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
 .form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field{margin-bottom:18px;display:flex;flex-direction:column}
@@ -234,7 +287,8 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .location__phones{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:18px}
 .location__phones a{font-family:var(--ff-head);font-weight:600;font-size:16px}
 .location__phones a:hover{color:var(--red)}
-.location__map{height:180px;border-radius:var(--radius-sm);border:1px dashed var(--line);display:grid;place-items:center;color:var(--grey-dim);background:var(--charcoal);font-size:14px}
+.location__map{height:180px;border-radius:var(--radius-sm);border:1px solid var(--line);overflow:hidden;background:var(--charcoal)}
+.location__map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
 .location-single{
   display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:stretch;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
@@ -263,13 +317,15 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .footer__about{color:var(--grey);font-size:14px;line-height:1.7}
 .footer__bar{border-top:1px solid var(--line);padding:22px 0;font-size:13px;color:var(--grey-dim);text-align:center}
 
-/* ---------- Floating call ---------- */
-.float-call{
-  position:fixed;right:22px;bottom:22px;z-index:80;width:58px;height:58px;border-radius:50%;
-  background:var(--red);display:grid;place-items:center;font-size:24px;box-shadow:var(--shadow-red);
-  animation:pulse 2.4s infinite;
+/* ---------- Floating buttons ---------- */
+.float-btn{
+  position:fixed;right:22px;z-index:80;width:56px;height:56px;border-radius:50%;
+  display:grid;place-items:center;font-size:24px;transition:transform .25s var(--ease);
 }
-.float-call:hover{transform:scale(1.08)}
+.float-btn:hover{transform:scale(1.08)}
+.float-btn svg{width:30px;height:30px;fill:#fff}
+.float-call{bottom:22px;background:var(--red);box-shadow:var(--shadow-red);animation:pulse 2.4s infinite}
+.float-wa{bottom:88px;background:#25d366;box-shadow:0 12px 30px -8px rgba(37,211,102,.5)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 var(--red-glow)}70%{box-shadow:0 0 0 18px rgba(225,29,42,0)}100%{box-shadow:0 0 0 0 rgba(225,29,42,0)}}
 
 /* ---------- Reveal animation ---------- */
@@ -279,7 +335,7 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 /* ---------- Responsive ---------- */
 @media (max-width:960px){
   .grid-4{grid-template-columns:repeat(2,1fr)}
-  .engineer__grid,.booking__grid{grid-template-columns:1fr;gap:40px}
+  .engineer__grid,.about__grid,.booking__grid{grid-template-columns:1fr;gap:40px}
   .footer__grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
@@ -301,6 +357,7 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
   .stat:nth-child(2){border-right:0}
   .location-single{grid-template-columns:1fr}
   .lang-btn{align-self:flex-start;margin-top:12px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:520px){
   .grid-3,.grid-4,.grid-2{grid-template-columns:1fr}
