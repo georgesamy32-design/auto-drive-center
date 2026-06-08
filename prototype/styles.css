@@ -104,6 +104,13 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .nav__link:hover::after{width:100%}
 .nav__cta{color:#fff!important}
 .nav__cta::after{display:none}
+.lang-btn{
+  font-family:var(--ff-head);font-weight:600;font-size:14px;line-height:1;
+  padding:9px 15px;border-radius:999px;border:1.5px solid var(--line);
+  color:#fff;display:inline-flex;align-items:center;gap:6px;
+  transition:border-color .2s,background .2s,transform .25s var(--ease);
+}
+.lang-btn:hover{border-color:var(--red);background:rgba(225,29,42,.12);transform:translateY(-2px)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
 .nav-toggle span{width:26px;height:2px;background:#fff;border-radius:2px;transition:.3s}
 
@@ -228,6 +235,17 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .location__phones a{font-family:var(--ff-head);font-weight:600;font-size:16px}
 .location__phones a:hover{color:var(--red)}
 .location__map{height:180px;border-radius:var(--radius-sm);border:1px dashed var(--line);display:grid;place-items:center;color:var(--grey-dim);background:var(--charcoal);font-size:14px}
+.location-single{
+  display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:stretch;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;max-width:980px;margin:0 auto;transition:border-color .3s,transform .3s var(--ease);
+}
+.location-single:hover{border-color:var(--red);transform:translateY(-4px)}
+.location-single__info{display:flex;flex-direction:column;justify-content:center}
+.location-single .location__map{height:100%;min-height:240px}
+.location__email{margin-top:10px}
+.location__email a{font-family:var(--ff-head);font-weight:600}
+.location__email a:hover{color:var(--red)}
 
 /* ---------- CTA banner ---------- */
 .cta-banner{background:linear-gradient(135deg,var(--red),var(--red-dark));position:relative;overflow:hidden}
@@ -281,6 +299,8 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
   .section{padding:68px 0}
   .stats__grid{grid-template-columns:1fr 1fr;gap:24px 0}
   .stat:nth-child(2){border-right:0}
+  .location-single{grid-template-columns:1fr}
+  .lang-btn{align-self:flex-start;margin-top:12px}
 }
 @media (max-width:520px){
   .grid-3,.grid-4,.grid-2{grid-template-columns:1fr}

@@ -6,9 +6,14 @@
   <title>Auto Drive Center</title>
   <meta http-equiv="refresh" content="0; url=./prototype/index.html" />
   <link rel="canonical" href="./prototype/index.html" />
-  <script>window.location.replace("./prototype/index.html");</script>
+  <script>
+    // Open the site in the visitor's language automatically (Arabic browsers → Arabic page).
+    var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+    var target = lang.indexOf("ar") === 0 ? "./prototype/index-ar.html" : "./prototype/index.html";
+    window.location.replace(target);
+  </script>
 </head>
 <body>
-  <p>Redirecting to <a href="./prototype/index.html">Auto Drive Center</a>…</p>
+  <p>Redirecting… <a href="./prototype/index.html">English</a> · <a href="./prototype/index-ar.html">العربية</a></p>
 </body>
 </html>
