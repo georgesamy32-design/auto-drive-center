@@ -120,9 +120,14 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
 .hero__bg{
   position:absolute;inset:0;
-  background:
+  /* Drop a file at images/hero.jpg to show a photo; until then the gradient shows. */
+  background-image:
+    url('images/hero.jpg'),
     radial-gradient(1200px 600px at 75% 20%,rgba(225,29,42,.18),transparent 60%),
     linear-gradient(135deg,#0b0b0d 0%,#16161c 55%,#0b0b0d 100%);
+  background-size:cover,auto,auto;
+  background-position:center,center,center;
+  background-repeat:no-repeat;
 }
 .hero__bg::before{
   content:"";position:absolute;inset:0;opacity:.4;
@@ -211,9 +216,16 @@ h1,h2,h3,h4{font-family:var(--ff-head);line-height:1.15;font-weight:700}
 .about__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
 .about__photo{
   aspect-ratio:4/3.4;border-radius:18px;border:1px solid var(--line);position:relative;overflow:hidden;
-  background:radial-gradient(420px 280px at 50% 25%,rgba(225,29,42,.22),transparent 60%),linear-gradient(160deg,#1d1d24,#101015);
+  /* Drop a file at images/about.jpg to show a photo; until then the gradient shows. */
+  background-image:
+    url('images/about.jpg'),
+    radial-gradient(420px 280px at 50% 25%,rgba(225,29,42,.22),transparent 60%),
+    linear-gradient(160deg,#1d1d24,#101015);
+  background-size:cover,auto,auto;
+  background-position:center;
+  background-repeat:no-repeat;
 }
-.about__photo::after{content:"🚗";position:absolute;inset:0;display:grid;place-items:center;font-size:110px;opacity:.45}
+.about__photo::after{content:"🚗";position:absolute;inset:0;display:grid;place-items:center;font-size:110px;opacity:.18}
 .about__content p{color:var(--grey);margin:18px 0}
 
 /* ---------- Offers ---------- */

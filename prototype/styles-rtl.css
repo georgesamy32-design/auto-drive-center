@@ -10,9 +10,13 @@ body{direction:rtl;text-align:right}
 /* Hero overlay: darken the right side instead of the left */
 .hero__overlay{background:linear-gradient(270deg,rgba(0,0,0,.55),transparent 70%)}
 .hero__bg{
-  background:
+  background-image:
+    url('images/hero.jpg'),
     radial-gradient(1200px 600px at 25% 20%,rgba(225,29,42,.18),transparent 60%),
     linear-gradient(225deg,#0b0b0d 0%,#16161c 55%,#0b0b0d 100%);
+  background-size:cover,auto,auto;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 .hero__sub{margin-left:auto}
 
